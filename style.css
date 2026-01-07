@@ -245,6 +245,12 @@ body {
     }
 }
 
+/* PCでは絶対に縦並びにする（強制） */
+.about-archive-wrapper {
+    display: block !important;
+    flex-direction: column !important;
+}
+
 /* スマホで TOP の ABOUT / ARCHIVE ボタンを横並びにする */
 @media screen and (max-width: 600px) {
     .top-buttons {
