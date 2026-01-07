@@ -57,23 +57,15 @@
         .top {
             position: relative;
             text-align: center;
-            padding-top: 80px;
+            padding-top: 60px;
         }
         .top-img {
             width: 100%;
             height: auto;
-            display: block;
         }
-
-        /* ★ ボタンをヘッダー寄りに上げる */
         .top-buttons {
-            position: absolute;
-            top: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
+            margin-top: 20px;
         }
-
         .btn {
             padding: 10px 20px;
             border: 1px solid #fff;
@@ -85,14 +77,17 @@
             background: transparent;
         }
 
-        /* ★ ABOUT & ARCHIVE を完全に縦並びに戻す */
+        /* ABOUT & ARCHIVE 横並びレイアウト */
         .about-archive-wrapper {
-            display: block; /* ← これが最重要 */
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 20px;
             padding: 20px;
         }
 
         .about, .archive {
-            margin-bottom: 40px;
+            flex: 1;
         }
 
         .about h2, .archive h2 {
@@ -112,10 +107,6 @@
         }
 
         /* SNS */
-        .sns {
-            padding: 40px 20px;
-            text-align: center;
-        }
         .sns-icons img {
             width: 40px;
             margin: 10px;
@@ -139,12 +130,6 @@
             max-width: 500px;
         }
 
-        /* CONTACT */
-        .contact {
-            padding: 40px 20px;
-            text-align: center;
-        }
-
         /* フッター */
         .footer {
             text-align: center;
@@ -152,13 +137,14 @@
             background: #111;
         }
 
-        /* スマホ調整（縦並びは維持） */
+        /* スマホ対応（600px以下でも横並び維持） */
         @media (max-width: 600px) {
-            .grid-container {
-                grid-template-columns: repeat(2, 1fr);
+            .about-archive-wrapper {
+                flex-direction: row;
+                flex-wrap: wrap;
             }
-            .top-buttons {
-                top: 30px;
+            .about, .archive {
+                flex: 1 1 100%;
             }
         }
     </style>
@@ -195,11 +181,11 @@
     </div>
 </section>
 
-<!-- ★ ABOUT と ARCHIVE を縦並びに戻す -->
+<!-- ★ ABOUT と ARCHIVE を横並びにするラッパー -->
 <div class="about-archive-wrapper">
 
 <section id="about" class="about">
-    <h2>ABOUT</h2>
+    <h2>ABOUT Glochic</h2>
     <p>
         流行ではなく、<br>
         違和感を纏うために。<br><br>
