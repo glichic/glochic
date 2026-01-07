@@ -1,0 +1,298 @@
+/* RESET */
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: #000;
+    color: #fff;
+    font-family: "Noto Sans JP", sans-serif;
+    line-height: 1.7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* HEADER */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 25px;
+    z-index: 1000;
+}
+
+/* ハンバーガーメニュー */
+.menu-btn {
+    width: 30px;
+    height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.menu-btn span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+}
+
+/* SLIDE MENU */
+.menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background: #111;
+    padding-top: 80px;
+    transition: 0.4s;
+    z-index: 999;
+}
+
+.menu.open {
+    right: 0;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    margin: 20px 0;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+/* TOP */
+.top {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin-top: 70px;
+    overflow: hidden;
+}
+
+.top-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+
+/* ★ ボタン位置を正しく調整（ヘッダーより下・画像の中腹） */
+.top-content {
+    position: absolute;
+    top: 120px; /* ← ここで位置調整（上にしたいなら数値を小さく） */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    margin: 0 10px;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.btn:hover {
+    background: #ccc;
+}
+
+.btn-outline:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* ABOUT */
+.about {
+    padding: 120px 30px;
+}
+
+.about h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+}
+
+.about p {
+    font-size: 18px;
+    line-height: 2;
+}
+
+/* ARCHIVE */
+.archive {
+    padding: 120px 30px 60px;
+}
+
+.archive h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+}
+
+/* ★ アーカイブ 3×4 を完全復元 */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 20px 0;
+}
+
+.archive-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.archive-item img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 4px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.8s ease-out;
+}
+
+.archive-item img.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ホバー時の黒幕＋作品名 */
+.archive-item::after {
+    content: attr(data-caption);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.archive-item:hover::after {
+    opacity: 1;
+}
+
+/* LIGHTBOX */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2000;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    margin-bottom: 20px;
+}
+
+.lightbox p {
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+/* SNS */
+.sns {
+    padding: 120px 30px;
+}
+
+.sns-icons img {
+    width: 60px;
+    margin: 10px;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.sns-icons img:hover {
+    opacity: 1;
+}
+
+/* CONTACT */
+.contact {
+    padding: 120px 30px;
+}
+
+.contact h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 40px 0;
+    background: #111;
+}
+
+.footer p {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* スマホ調整 */
+@media screen and (max-width: 600px) {
+
+    .top {
+        height: auto;
+    }
+
+    .top-img {
+        height: auto;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    .top-content {
+        top: 100px;
+    }
+
+    /* スマホは 2列の方が見やすい */
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
