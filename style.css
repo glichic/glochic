@@ -248,3 +248,19 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* スマホで TOP の ABOUT / ARCHIVE ボタンを横並びにする */
+@media screen and (max-width: 600px) {
+    .top-buttons {
+        display: flex;
+        flex-direction: row; /* 横並び */
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .top-buttons .btn {
+        flex: 1; /* ボタン幅を均等に */
+        text-align: center;
+    }
+}
