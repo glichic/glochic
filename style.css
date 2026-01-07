@@ -129,13 +129,9 @@ body {
 /* ------------------------------
    ABOUT
 ------------------------------ */
-.about {
-    padding: 80px 20px;
-}
-
-.about h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
+/* PCでは縦並び（デフォルト） */
+.about-archive-wrapper {
+    display: block;
 }
 
 /* ------------------------------
@@ -264,3 +260,4 @@ body {
         text-align: center;
     }
 }
+
