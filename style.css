@@ -229,3 +229,13 @@ html, body {
     margin: 0 auto;
     display: block;
 }
+
+/* PCでLightbox画像が巨大化しないようにする（最優先で適用） */
+.lightbox img {
+    width: auto !important;
+    max-width: 90vw !important;
+    max-height: 90vh !important;
+    height: auto !important;
+    margin: 0 auto;
+    display: block;
+}
