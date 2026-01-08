@@ -20,14 +20,14 @@
 <!-- ★ 1. チェックボックス（1つだけ） -->
 <input type="checkbox" id="menu-toggle" class="menu-toggle">
 
-<!-- ★ 2. ハンバーガー（1つだけ） -->
+<!-- ★ 2. ハンバーガー（右上固定） -->
 <label for="menu-toggle" class="menu-btn">
     <span></span>
     <span></span>
     <span></span>
 </label>
 
-<!-- ★ 3. メニュー（1つだけ） -->
+<!-- ★ 3. メニュー（右スライド） -->
 <nav class="menu">
     <ul>
         <li><a href="#top">TOP</a></li>
@@ -38,7 +38,8 @@
     </ul>
 </nav>
 
-    <div id="img01" class="lightbox">
+<!-- ★ CSS-only Lightbox（作品ごとに追加） -->
+<div id="img01" class="lightbox">
     <a href="#">
         <img src="images/work01.png" alt="">
     </a>
@@ -49,7 +50,70 @@
         <img src="images/work02.png" alt="">
     </a>
 </div>
-    
+
+<div id="img03" class="lightbox">
+    <a href="#">
+        <img src="images/work03.png" alt="">
+    </a>
+</div>
+
+<div id="img04" class="lightbox">
+    <a href="#">
+        <img src="images/work04.png" alt="">
+    </a>
+</div>
+
+<div id="img05" class="lightbox">
+    <a href="#">
+        <img src="images/work05.png" alt="">
+    </a>
+</div>
+
+<div id="img06" class="lightbox">
+    <a href="#">
+        <img src="images/work06.png" alt="">
+    </a>
+</div>
+
+<div id="img07" class="lightbox">
+    <a href="#">
+        <img src="images/work07.png" alt="">
+    </a>
+</div>
+
+<div id="img08" class="lightbox">
+    <a href="#">
+        <img src="images/work08.png" alt="">
+    </a>
+</div>
+
+<div id="img09" class="lightbox">
+    <a href="#">
+        <img src="images/work09.png" alt="">
+    </a>
+</div>
+
+<div id="img10" class="lightbox">
+    <a href="#">
+        <img src="images/work10.png" alt="">
+    </a>
+</div>
+
+<div id="img11" class="lightbox">
+    <a href="#">
+        <img src="images/work11.png" alt="">
+    </a>
+</div>
+
+<div id="img12" class="lightbox">
+    <a href="#">
+        <img src="images/work12.png" alt="">
+    </a>
+</div>
+
+<!-- =============================== -->
+<!-- TOP -->
+<!-- =============================== -->
 <section id="top" class="top">
     <picture>
         <source srcset="images/sumaaho-Header.png" media="(max-width: 600px)">
@@ -62,6 +126,9 @@
     </div>
 </section>
 
+<!-- =============================== -->
+<!-- ABOUT -->
+<!-- =============================== -->
 <section id="about" class="about">
     <h2>ABOUT Glochic</h2>
     <p>
@@ -73,30 +140,68 @@
     </p>
 </section>
 
+<!-- =============================== -->
+<!-- ARCHIVE -->
+<!-- =============================== -->
 <section id="archive" class="archive">
     <h2>Glochic Archive</h2>
 
     <div class="grid-container">
-        <div class="archive-item" data-caption="作品 01"><img src="images/work01.png"></div>
-        <div class="archive-item" data-caption="作品 02"><img src="images/work02.png"></div>
-        <div class="archive-item" data-caption="作品 03"><img src="images/work03.png"></div>
-        <div class="archive-item" data-caption="作品 04"><img src="images/work04.png"></div>
-        <div class="archive-item" data-caption="作品 05"><img src="images/work05.png"></div>
-        <div class="archive-item" data-caption="作品 06"><img src="images/work06.png"></div>
-        <div class="archive-item" data-caption="作品 07"><img src="images/work07.png"></div>
-        <div class="archive-item" data-caption="作品 08"><img src="images/work08.png"></div>
-        <div class="archive-item" data-caption="作品 09"><img src="images/work09.png"></div>
-        <div class="archive-item" data-caption="作品 10"><img src="images/work10.png"></div>
-        <div class="archive-item" data-caption="作品 11"><img src="images/work11.png"></div>
-        <div class="archive-item" data-caption="作品 12"><img src="images/work12.png"></div>
+
+        <div class="archive-item" data-caption="作品 01">
+            <a href="#img01"><img src="images/work01.png" alt=""></a>
+        </div>
+
+        <div class="archive-item" data-caption="作品 02">
+            <a href="#img02"><img src="images/work02.png" alt=""></a>
+        </div>
+
+        <div class="archive-item" data-caption="作品 03">
+            <a href="#img03"><img src="images/work03.png" alt=""></a>
+        </div>
+
+        <div class="archive-item" data-caption="作品 04">
+            <a href="#img04"><img src="images/work04.png" alt=""></a>
+        </div>
+
+        <div class="archive-item" data-caption="作品 05">
+            <a href="#img05"><img src="images/work05.png" alt=""></a>
+        </div>
+
+        <div class="archive-item" data-caption="作品 06">
+            <a href="#img06"><img src="images/work06.png" alt=""></a>
+        </div>
+
+        <div class="archive-item" data-caption="作品 07">
+            <a href="#img07"><img src="images/work07.png" alt=""></a>
+        </div>
+
+        <div class="archive-item" data-caption="作品 08">
+            <a href="#img08"><img src="images/work08.png" alt=""></a>
+        </div>
+
+        <div class="archive-item" data-caption="作品 09">
+            <a href="#img09"><img src="images/work09.png" alt=""></a>
+        </div>
+
+        <div class="archive-item" data-caption="作品 10">
+            <a href="#img10"><img src="images/work10.png" alt=""></a>
+        </div>
+
+        <div class="archive-item" data-caption="作品 11">
+            <a href="#img11"><img src="images/work11.png" alt=""></a>
+        </div>
+
+        <div class="archive-item" data-caption="作品 12">
+            <a href="#img12"><img src="images/work12.png" alt=""></a>
+        </div>
+
     </div>
 </section>
 
-<div id="lightbox" class="lightbox">
-    <img id="lightbox-img" alt="">
-    <p id="lightbox-caption"></p>
-</div>
-
+<!-- =============================== -->
+<!-- SNS -->
+<!-- =============================== -->
 <section id="sns" class="sns">
     <h2>SNS</h2>
     <div class="sns-icons">
@@ -108,6 +213,9 @@
     </div>
 </section>
 
+<!-- =============================== -->
+<!-- CONTACT -->
+<!-- =============================== -->
 <section id="contact" class="contact">
     <h2>CONTACT</h2>
     <p>
@@ -117,12 +225,12 @@
     </p>
 </section>
 
+<!-- =============================== -->
+<!-- FOOTER -->
+<!-- =============================== -->
 <footer class="footer">
     <p>© 2026 Glochic</p>
 </footer>
 
 </body>
 </html>
-
-
-
