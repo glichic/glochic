@@ -22,7 +22,7 @@ body {
     display: flex;
     align-items: center;
     padding: 0 15px;
-    position: relative; /* ← ハンバーガーの基準 */
+    position: relative;
 }
 
 /* ハンバーガーボタン */
@@ -51,11 +51,11 @@ body {
 .menu {
     position: fixed;
     top: 0;
-    right: -260px; /* ← 完全に隠すため260px */
+    right: -260px;
     width: 250px;
     height: 100%;
     background: #111;
-    padding: 60px 20px; /* ← ヘッダーと重ならない */
+    padding: 60px 20px;
     transition: right 0.3s ease;
     z-index: 2000;
 }
@@ -85,7 +85,7 @@ body {
 ================================ */
 .top {
     position: relative;
-    padding-top: 60px; /* ← ヘッダー分の余白 */
+    padding-top: 60px;
 }
 
 .top-img {
@@ -220,4 +220,4 @@ body {
 .footer {
     padding: 20px;
     background: #111;
-}
+}S
