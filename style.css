@@ -45,7 +45,7 @@ body {
     background: #111;
     padding: 40px 20px;
     transition: right 0.3s ease; /* ← スライドアニメーション */
-    z-index: 999;
+    z-index: 2000;
 }
 
 .menu.open {
@@ -203,5 +203,6 @@ body {
     padding: 20px;
     background: #111;
 }
+
 
 
