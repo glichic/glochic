@@ -18,38 +18,52 @@
             text-align: center;
         }
 
-        /* ===============================
-           ヘッダー
-        ================================ */
-       .header {
+/* ===============================
+   ヘッダー（完全安定版）
+================================ */
+.header {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 60px;   /* ← 追加：ヘッダーの高さを固定 */
-    padding: 0 10px;
+    height: 60px;              /* ← 高さを固定して途切れ防止 */
+    background: #000;          /* ← 黒背景で安定 */
     z-index: 1000;
-    background: #000;
-    display: flex;          /* ← 中身を縦中央に */
-    align-items: center;    /* ← 中央揃え */
+    display: flex;
+    align-items: center;       /* ← 中央揃え */
+    padding: 0 15px;
 }
-        
-        .menu-btn span {
-            display: block;
-            height: 3px;
-            background: #fff;
-            margin: 6px 0;
-        }
+
+/* ハンバーガーボタン */
+.menu-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);  /* ← 完全に中央揃え */
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.menu-btn span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    margin: 6px 0;
+}
+
 /* ===============================
    メニュー（右側スライド）
 ================================ */
 .menu {
     position: fixed;
     top: 0;
-    right: -250px;
+    right: -250px;             /* ← 初期は隠す */
     width: 250px;
     height: 100%;
     background: #111;
-    padding: 40px 20px;
+    padding: 60px 20px;        /* ← ヘッダーと被らないように上60px */
     transition: right 0.3s ease;
     z-index: 2000;
 }
@@ -61,6 +75,7 @@
 .menu ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .menu li {
@@ -71,15 +86,6 @@
     color: #fff;
     text-decoration: none;
     font-size: 18px;
-}
-.menu-btn {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    z-index: 1001;
-    width: 40px;   /* ← 追加 */
-    height: 30px;  /* ← 追加 */
-    cursor: pointer;
 }
 
         /* ===============================
@@ -225,11 +231,11 @@
 <body>
 
 <header class="header">
-   <div class="menu-btn" onclick="toggleMenu()">
+    <div class="menu-btn" onclick="toggleMenu()">
         <span></span>
         <span></span>
         <span></span>
-   </div>
+    </div>
 </header>
 
 <nav id="menu" class="menu">
@@ -339,6 +345,7 @@ document.getElementById("lightbox").addEventListener("click", () => {
 
 </body>
 </html>
+
 
 
 
