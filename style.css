@@ -113,8 +113,8 @@ html, body {
 }
 
 .archive-item {
+    display: block;
     position: relative;
-    overflow: hidden;
 }
 
 .archive-item img {
@@ -280,3 +280,4 @@ html, body {
     display: block;
     margin: 0 auto;
 }
+
