@@ -21,8 +21,10 @@ body {
 }
 
 .menu-btn {
-    width: 30px;
-    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    right: 15px; /* ← 右上に配置 */
+    z-index: 1001;
 }
 .menu-btn span {
     display: block;
@@ -201,4 +203,5 @@ body {
     padding: 20px;
     background: #111;
 }
+
 
