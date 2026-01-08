@@ -15,7 +15,7 @@ html, body {
    ハンバーガー（CSSだけで動く）
 ================================ */
 .menu-toggle {
-    display: none; /* ← 非表示のチェックボックス */
+    display: none;
 }
 
 /* ハンバーガーの3本線（右上固定） */
@@ -37,11 +37,13 @@ html, body {
     margin: 6px 0;
 }
 
-/* メニュー（右側に隠す） */
+/* ===============================
+   メニュー（右側スライド）
+================================ */
 .menu {
     position: fixed;
     top: 0;
-    right: -300px; /* ← ここを増やすだけで完全に隠れる */
+    right: -320px; /* ← 完全に隠れる幅（最適値） */
     width: 250px;
     height: 100%;
     background: #111;
@@ -50,13 +52,9 @@ html, body {
     z-index: 1500;
 }
 
+/* チェックが入ったら右→左へスライドイン */
 .menu-toggle:checked ~ .menu {
     right: 0;
-}
-
-/* チェックが入ったら左へスライドイン（＝画面内へ） */
-.menu-toggle:checked ~ .menu {
-    right: 0; /* ← 右端にピタッと表示 */
 }
 
 /* メニュー内リンク */
@@ -217,6 +215,3 @@ html, body {
     padding: 20px;
     background: #111;
 }
-
-
-
