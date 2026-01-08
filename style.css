@@ -10,7 +10,7 @@ body {
 }
 
 /* ===============================
-   ヘッダー（完全安定版）
+   ヘッダー
 ================================ */
 .header {
     position: fixed;
@@ -22,10 +22,15 @@ body {
     display: flex;
     align-items: center;
     padding: 0 15px;
-    position: relative;
 }
 
-/* ハンバーガーボタン */
+/* ===============================
+   ハンバーガーボタン（CSSだけで動く）
+================================ */
+.menu-toggle {
+    display: none; /* ← 非表示のチェックボックス */
+}
+
 .menu-btn {
     position: absolute;
     right: 15px;
@@ -38,21 +43,20 @@ body {
 }
 
 .menu-btn span {
-    display: block !important;
-    width: 100% !important;
-    height: 3px !important;
-    background: #fff !important;
-    margin: 6px 0 !important;
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    margin: 6px 0;
 }
 
-
 /* ===============================
-   メニュー（右側スライド）
+   メニュー（左スライド）
 ================================ */
 .menu {
     position: fixed;
     top: 0;
-    left: -250px; /* ← ここが最重要！ */
+    left: -250px; /* ← 完全に隠す */
     width: 250px;
     height: 100%;
     background: #111;
@@ -61,12 +65,9 @@ body {
     z-index: 2000;
 }
 
-.menu.open {
-    left: 0; /* ← 左からスライドイン */
-}
-
-.menu.open {
-    right: 0;
+/* ★ チェックが入ったらメニューを表示（JS不要） */
+.menu-toggle:checked ~ .menu {
+    left: 0;
 }
 
 .menu ul {
@@ -98,6 +99,7 @@ body {
     height: auto;
     display: block;
 }
+
 .top-buttons {
     margin-top: 20px;
     display: flex;
@@ -125,7 +127,7 @@ body {
 }
 
 /* ===============================
-   ARCHIVE グリッド（3×4）
+   ARCHIVE グリッド
 ================================ */
 .grid-container {
     display: grid;
@@ -147,7 +149,7 @@ body {
 }
 
 /* ===============================
-   作品ホバー時の黒幕＋作品名表示
+   作品ホバー
 ================================ */
 .archive-item::before {
     content: "";
@@ -226,14 +228,7 @@ body {
     padding: 20px;
     background: #111;
 }
+
 html, body {
     overflow-x: hidden;
 }
-
-
-
-
-
-
-
-
