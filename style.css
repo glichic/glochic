@@ -239,3 +239,14 @@ html, body {
     margin: 0 auto;
     display: block;
 }
+
+/* PCでLightbox画像が画面に収まらない問題の最終解決 */
+.work .lightbox img {
+    width: auto !important;
+    max-width: 90vw !important;
+    max-height: 90vh !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block;
+    margin: 0 auto;
+}
