@@ -164,7 +164,6 @@ html, body {
     display: none;
 }
 
-.lb-toggle:checked + .lightbox,
 .lb-toggle:checked ~ .lightbox {
     display: flex;
 }
