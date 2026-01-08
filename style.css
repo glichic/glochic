@@ -1,144 +1,222 @@
 /* ===============================
-   ARCHIVE（PC版）
+   基本設定
 ================================ */
-.archive {
-    padding: 40px 10px;
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: #000;
+    color: #fff;
+    font-family: "Helvetica", "Arial", sans-serif;
+    text-align: center;
 }
 
+/* ===============================
+   ハンバーガー
+================================ */
+.menu-toggle {
+    display: none;
+}
+
+.menu-btn {
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+.menu-btn span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    margin: 6px 0;
+}
+
+/* ===============================
+   メニュー（右スライド）
+================================ */
+.menu {
+    position: fixed;
+    top: 0;
+    right: -340px;
+    width: 250px;
+    height: 100%;
+    background: #111;
+    padding: 60px 20px;
+    box-sizing: border-box;
+    transition: right 0.3s ease;
+    z-index: 1500;
+}
+
+.menu-toggle:checked ~ .menu {
+    right: 0;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    margin: 20px 0;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* ===============================
+   TOP
+================================ */
+.top {
+    padding-top: 60px;
+}
+
+.top-img {
+    width: 100%;
+    height: auto;
+}
+
+.top-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: 1px solid #fff;
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn-outline {
+    background: transparent;
+}
+
+/* ===============================
+   ARCHIVE
+================================ */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+    padding: 10px;
 }
 
-/* 1作品の枠 */
-.work {
-    position: relative;
-    width: 100%;
-}
-
-/* クリック領域（サムネイル） */
 .archive-item {
-    display: block;
     position: relative;
-    width: 100%;
-    height: 100%;
     overflow: hidden;
 }
 
-/* サムネイル画像（PCは高さ200px固定） */
 .archive-item img {
-    display: block;
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
 
-/* ホバー黒幕＆キャプション */
+/* ホバー演出 */
 .archive-item::before,
 .archive-item::after {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
+    pointer-events: none !important;
 }
 
-/* 黒幕 */
 .archive-item::before {
     content: "";
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-/* 作品名 */
 .archive-item::after {
     content: attr(data-caption);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: #fff;
-    font-size: 18px;
-    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-/* ホバー時に発火 */
 .archive-item:hover::before,
 .archive-item:hover::after {
     opacity: 1;
 }
 
-
 /* ===============================
-   スマホ表示（600px以下）
+   Lightbox（チェックボックス方式）
 ================================ */
-@media screen and (max-width: 600px) {
+.lb-toggle {
+    display: none;
+}
 
-  /* グリッドを1列に（最重要） */
-  .grid-container {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
+.lb-toggle:checked ~ .lightbox {
+    display: flex;
+}
 
-  /* サムネイルを4:3比率にする */
-  .archive-item {
-    padding-top: 75%; /* ← 4:3比率 */
-  }
-
-  .archive-item img {
-    position: absolute;
+.lightbox {
+    display: none;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-  }
-
-  /* メニューの調整 */
-  .menu {
-    width: 100vw;
-    left: 0;
-  }
-
-  .menu ul {
-    flex-direction: column;
-    gap: 12px;
-    padding: 20px;
-  }
-
-  .menu ul li a {
-    font-size: 16px;
-  }
-
-  /* Lightbox画像のサイズ制限 */
-  .lightbox img {
-    max-width: 90vw !important;
-    max-height: 80vh !important;
-    object-fit: contain !important;
-    display: block;
-    margin: 0 auto;
-  }
-
-  /* ABOUT / CONTACT の文字調整 */
-  .about p,
-  .contact p {
-    font-size: 15px;
-    line-height: 1.6;
-    padding: 0 10px;
-  }
-
-  /* ボタンの縦並び */
-  .top-buttons {
-    flex-direction: column;
-    gap: 10px;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
     align-items: center;
-  }
+    flex-direction: column;
+    z-index: 3000;
+}
 
-  .btn {
-    width: 80%;
-    text-align: center;
-  }
+/* Lightbox 画像 */
+.lightbox img {
+    width: auto !important;
+    max-width: 90% !important;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* ✖ ボタン */
+.lb-close {
+    font-size: 32px;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 20px;
+    user-select: none;
+}
+
+/* ===============================
+   SNS
+================================ */
+.sns-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.sns-icons img {
+    width: 40px;
+}
+
+/* ===============================
+   フッター
+================================ */
+.footer {
+    padding: 20px;
+    background: #111;
 }
