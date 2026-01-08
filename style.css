@@ -73,46 +73,66 @@
 }
 
 /* ===============================
-   スマホ対応（レスポンシブ調整）
+   スマホ表示の完全修正（600px以下）
 ================================ */
 @media screen and (max-width: 600px) {
+  /* グリッドを1列に */
   .grid-container {
     grid-template-columns: 1fr;
     gap: 20px;
   }
 
+  /* 作品枠を4:3比率で維持 */
   .archive-item {
-    padding-top: 75%; /* 4:3比率を維持 */
+    padding-top: 75%;
   }
 
   .archive-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
   }
 
-  .top-buttons {
-    flex-direction: column;
-    gap: 10px;
-  }
-
+  /* メニューの文字サイズと余白調整 */
   .menu ul {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
     padding: 20px;
   }
 
   .menu ul li a {
-    font-size: 18px;
+    font-size: 16px;
   }
 
+  /* Lightbox画像のサイズ制限 */
   .lightbox img {
     max-width: 90vw !important;
     max-height: 80vh !important;
     object-fit: contain !important;
+    display: block;
+    margin: 0 auto;
   }
 
+  /* テキストの読みやすさ調整 */
   .about p,
   .contact p {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.6;
+    padding: 0 10px;
+  }
+
+  /* ボタンの縦並び */
+  .top-buttons {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .btn {
+    width: 80%;
+    text-align: center;
   }
 }
