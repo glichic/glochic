@@ -1,103 +1,186 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glochic Official</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<header class="header">
-   <div class="menu-btn" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-   </div>
-</header>
-
-<nav id="menu" class="menu">
-    <ul>
-        <li><a href="#top">TOP</a></li>
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="#archive">ARCHIVE</a></li>
-        <li><a href="#sns">SNS</a></li>
-        <li><a href="#contact">CONTACT</a></li>
-    </ul>
-</nav>
-
-<section id="top" class="top">
-    <picture>
-        <source srcset="images/sumaaho-Header.png" media="(max-width: 600px)">
-        <img src="images/glochic-header.png" class="top-img" alt="Glochic Header">
-    </picture>
-
-    <div class="top-buttons">
-        <a href="#about" class="btn">ABOUT</a>
-        <a href="#archive" class="btn btn-outline">ARCHIVE</a>
-    </div>
-</section>
-
-<section id="about" class="about">
-    <h2>ABOUT Glochic</h2>
-    <p>
-        流行ではなく、<br>
-        違和感を纏うために。<br><br>
-        静かな棘と毒を、<br>
-        日常に落とし込む。<br><br>
-        Glochic は、あなたの“ありのまま”を愛するブランドです。
-    </p>
-</section>
-
-<section id="archive" class="archive">
-    <h2>Glochic Archive</h2>
-
-    <div class="grid-container">
-        <div class="archive-item" data-caption="作品 01"><img src="images/work01.png"></div>
-        <div class="archive-item" data-caption="作品 02"><img src="images/work02.png"></div>
-        <div class="archive-item" data-caption="作品 03"><img src="images/work03.png"></div>
-        <div class="archive-item" data-caption="作品 04"><img src="images/work04.png"></div>
-        <div class="archive-item" data-caption="作品 05"><img src="images/work05.png"></div>
-        <div class="archive-item" data-caption="作品 06"><img src="images/work06.png"></div>
-        <div class="archive-item" data-caption="作品 07"><img src="images/work07.png"></div>
-        <div class="archive-item" data-caption="作品 08"><img src="images/work08.png"></div>
-        <div class="archive-item" data-caption="作品 09"><img src="images/work09.png"></div>
-        <div class="archive-item" data-caption="作品 10"><img src="images/work10.png"></div>
-        <div class="archive-item" data-caption="作品 11"><img src="images/work11.png"></div>
-        <div class="archive-item" data-caption="作品 12"><img src="images/work12.png"></div>
-    </div>
-</section>
-
-<section id="sns" class="sns">
-    <h2>SNS</h2>
-    <div class="sns-icons">
-        <a href="#"><img src="images/twitter.png"></a>
-        <a href="#"><img src="images/instagram.png"></a>
-        <a href="#"><img src="images/tiktok.png"></a>
-        <a href="#"><img src="images/mercari.png"></a>
-        <a href="#"><img src="images/base.png"></a>
-    </div>
-</section>
-
-<section id="contact" class="contact">
-    <h2>CONTACT</h2>
-    <p>
-        コラボレーション、イベント出展、作品に関するご相談は、<br>
-        メールまたはSNSのDMからご連絡ください。<br><br>
-        official.glochic@gmail.com
-    </p>
-</section>
-
-<footer class="footer">
-    <p>© 2026 Glochic</p>
-</footer>
-
-<script>
-function toggleMenu() {
-    document.getElementById("menu").classList.toggle("open");
+/* ===============================
+   基本設定
+================================ */
+body {
+    margin: 0;
+    font-family: "Helvetica", "Arial", sans-serif;
+    background: #000;
+    color: #fff;
+    text-align: center;
 }
-</script>
 
-</body>
-</html>
+/* ===============================
+   ヘッダー
+================================ */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.menu-btn {
+    width: 30px;
+    cursor: pointer;
+}
+.menu-btn span {
+    display: block;
+    height: 3px;
+    background: #fff;
+    margin: 6px 0;
+}
+
+/* ===============================
+   メニュー
+================================ */
+.menu {
+    display: none;
+    background: #111;
+    padding: 20px;
+}
+.menu.open {
+    display: block;
+}
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+.menu li {
+    margin: 10px 0;
+}
+.menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* ===============================
+   TOP
+================================ */
+.top {
+    position: relative;
+    padding-top: 60px;
+}
+.top-img {
+    width: 100%;
+    height: auto;
+}
+
+.top-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.btn {
+    padding: 10px 20px;
+    border: 1px solid #fff;
+    text-decoration: none;
+    color: #fff;
+}
+.btn-outline {
+    background: transparent;
+}
+
+/* ===============================
+   ABOUT / ARCHIVE
+================================ */
+.about h2,
+.archive h2 {
+    margin-top: 40px;
+}
+
+/* ===============================
+   ARCHIVE グリッド
+================================ */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+
+.archive-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.archive-item img {
+    width: 100%;
+    display: block;
+}
+
+/* ===============================
+   作品ホバー時の黒幕＋作品名表示
+================================ */
+.archive-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.archive-item::after {
+    content: attr(data-caption);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.archive-item:hover::before,
+.archive-item:hover::after {
+    opacity: 1;
+}
+
+/* ===============================
+   SNS
+================================ */
+.sns-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.sns-icons img {
+    width: 40px;
+}
+
+/* ===============================
+   Lightbox
+================================ */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.lightbox img {
+    width: 80%;
+    max-width: 500px;
+}
+
+/* ===============================
+   フッター
+================================ */
+.footer {
+    padding: 20px;
+    background: #111;
+}
