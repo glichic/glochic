@@ -160,13 +160,17 @@ body {
         flex: 0 0 90%;          /* ← スワイプで切り替え */
     }
 }
-body {
-    margin: 0;
-    font-family: "Helvetica", "Arial", sans-serif;
-    background: #000;
-    color: #fff;
+/* 全てのテキストを中央揃え */
+body * {
+    text-align: center !important;
 }
 
+/* SNS アイコンを中央揃え */
+.sns-icons {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 20px !important;
+}
 /* ヘッダー */
 .header {
     position: fixed;
@@ -322,15 +326,5 @@ body {
         flex: 0 0 90%;          /* ← スワイプで切り替え */
     }
 }
-/* サイト内のすべての文字を中央揃え */
-body, section, h1, h2, h3, h4, h5, h6, p, a, li {
-    text-align: center;
-}
 
-/* SNS アイコンを中央揃え */
-.sns-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
 
