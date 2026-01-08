@@ -9,6 +9,10 @@ body {
     text-align: center;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 /* ===============================
    ヘッダー
 ================================ */
@@ -28,7 +32,7 @@ body {
    ハンバーガーボタン（CSSだけで動く）
 ================================ */
 .menu-toggle {
-    display: none; /* ← 非表示のチェックボックス */
+    display: none;
 }
 
 .menu-btn {
@@ -56,7 +60,7 @@ body {
 .menu {
     position: fixed;
     top: 0;
-    left: -250px; /* ← 完全に隠す */
+    left: -250px;
     width: 250px;
     height: 100%;
     background: #111;
@@ -65,7 +69,7 @@ body {
     z-index: 2000;
 }
 
-/* ★ チェックが入ったらメニューを表示（JS不要） */
+/* ★ チェックが入ったらメニューを表示 */
 .menu-toggle:checked ~ .menu {
     left: 0;
 }
@@ -227,8 +231,4 @@ body {
 .footer {
     padding: 20px;
     background: #111;
-}
-
-html, body {
-    overflow-x: hidden;
 }
