@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+
+    <!-- picture のはみ出し防止（正しい位置に移動） -->
     <style>
         picture, img {
             max-width: 100%;
@@ -9,20 +13,28 @@
             display: block;
         }
     </style>
+
     <title>Glochic Official</title>
 </head>
 
 <body>
 
 <header class="header">
-    <div class="menu-btn" onclick="toggleMenu()">
+
+    <!-- ★ CSSだけで動くメニューのためのチェックボックス -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+    <!-- ★ ハンバーガーボタン（JS不要） -->
+    <label for="menu-toggle" class="menu-btn">
         <span></span>
         <span></span>
         <span></span>
-    </div>
+    </label>
+
 </header>
 
-<nav id="menu" class="menu">
+<!-- ★ 左スライドメニュー（CSSで開閉） -->
+<nav class="menu">
     <ul>
         <li><a href="#top">TOP</a></li>
         <li><a href="#about">ABOUT</a></li>
@@ -37,14 +49,6 @@
         <source srcset="images/sumaaho-Header.png" media="(max-width: 600px)">
         <img src="images/glochic-header.png" class="top-img" alt="Glochic Header">
     </picture>
-    <style>
-picture, img {
-    max-width: 100%;
-    width: 100%;
-    display: block;
-}
-</style>
-
 
     <div class="top-buttons">
         <a href="#about" class="btn">ABOUT</a>
@@ -111,30 +115,5 @@ picture, img {
     <p>© 2026 Glochic</p>
 </footer>
 
-<script>
-function toggleMenu() {
-    document.getElementById("menu").classList.toggle("open");
-}
-
-document.querySelectorAll(".archive-item img").forEach(img => {
-    img.addEventListener("click", () => {
-        const lightbox = document.getElementById("lightbox");
-        const lightboxImg = document.getElementById("lightbox-img");
-        const lightboxCaption = document.getElementById("lightbox-caption");
-
-        lightboxImg.src = img.src;
-        lightboxCaption.textContent = img.parentElement.dataset.caption;
-        lightbox.classList.add("show");
-    });
-});
-
-document.getElementById("lightbox").addEventListener("click", () => {
-    document.getElementById("lightbox").classList.remove("show");
-});
-</script>
-
 </body>
 </html>
-
-
-
