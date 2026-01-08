@@ -39,8 +39,45 @@
             background: #fff;
             margin: 6px 0;
         }
+/* ===============================
+   メニュー（右側スライド）
+================================ */
+.menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background: #111;
+    padding: 40px 20px;
+    transition: right 0.3s ease;
+    z-index: 999;
+}
 
+.menu.open {
+    right: 0;
+}
 
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    margin: 20px 0;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+        .menu-btn {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1001;
+}
         /* ===============================
            TOP
         ================================ */
@@ -298,5 +335,6 @@ document.getElementById("lightbox").addEventListener("click", () => {
 
 </body>
 </html>
+
 
 
