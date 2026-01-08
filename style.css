@@ -115,12 +115,14 @@ html, body {
 .archive-item {
     display: block;
     position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .archive-item img {
+    display: block;
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: auto;
 }
 
 /* ホバー演出 */
@@ -139,6 +141,7 @@ html, body {
     background: rgba(0,0,0,0.6);
     opacity: 0;
     transition: opacity 0.3s ease;
+    z-index: 1;
 }
 
 .archive-item::after {
@@ -150,6 +153,8 @@ html, body {
     color: #fff;
     opacity: 0;
     transition: opacity 0.3s ease;
+    z-index: 2;
+    pointer-events: none;
 }
 
 .archive-item:hover::before,
@@ -280,4 +285,5 @@ html, body {
     display: block;
     margin: 0 auto;
 }
+
 
