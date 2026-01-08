@@ -93,25 +93,21 @@ body {
 /* ===============================
    ARCHIVE グリッド
 ================================ */
+/* ARCHIVE グリッド：横3 × 縦4 */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* ← 横3列 */
     gap: 10px;
     padding: 10px;
 }
 
-.archive-item {
-    position: relative;
-    overflow: hidden;
-}
-
+/* 画像をトリミングして均一に見せる */
 .archive-item img {
     width: 100%;
     height: 200px;          /* ← 高さを固定（好きに調整OK） */
     object-fit: cover;      /* ← 画像が切れても美しく収まる */
     display: block;
 }
-
 
 /* ===============================
    作品ホバー時の黒幕＋作品名表示
@@ -187,4 +183,5 @@ body {
     padding: 20px;
     background: #111;
 }
+
 
