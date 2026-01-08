@@ -125,12 +125,19 @@ body {
     padding: 20px;
     background: #111;
 }
-/* 作品ホバー時の黒幕＋作品名表示 */
+/* 作品ホバー時の黒幕＋作品名表示（ゼロ番・完全版） */
 .archive-item {
     position: relative;
     overflow: hidden;
 }
 
+.archive-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* 黒い幕 */
 .archive-item::before {
     content: "";
     position: absolute;
@@ -138,13 +145,15 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.6); /* 黒い幕 */
+    background: rgba(0,0,0,0.6);
     opacity: 0;
     transition: opacity 0.3s ease;
+    pointer-events: none;
 }
 
+/* 作品名 */
 .archive-item::after {
-    content: attr(data-caption); /* 作品名を表示 */
+    content: attr(data-caption);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -156,6 +165,7 @@ body {
     pointer-events: none;
 }
 
+/* ホバー時に表示 */
 .archive-item:hover::before,
 .archive-item:hover::after {
     opacity: 1;
