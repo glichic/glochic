@@ -96,10 +96,9 @@ body {
     filter: brightness(70%);
 }
 
-/* ★ ボタン位置を正しく調整（ヘッダーより下・画像の中腹） */
 .top-content {
     position: absolute;
-    top: 120px; /* ← ここで位置調整（上にしたいなら数値を小さく） */
+    top: 120px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -159,7 +158,7 @@ body {
     letter-spacing: 3px;
 }
 
-/* ★ アーカイブ 3×4 を完全復元 */
+/* 3×4 グリッド */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -177,17 +176,9 @@ body {
     height: 320px;
     object-fit: cover;
     border-radius: 4px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.8s ease-out;
 }
 
-.archive-item img.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* ホバー時の黒幕＋作品名 */
+/* ホバー黒幕 */
 .archive-item::after {
     content: attr(data-caption);
     position: absolute;
@@ -291,8 +282,12 @@ body {
         top: 100px;
     }
 
-    /* スマホは 2列の方が見やすい */
+    /* スマホは2列 */
     .grid-container {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .archive-item img {
+        height: 200px;
     }
 }
