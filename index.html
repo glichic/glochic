@@ -18,6 +18,29 @@
 
 <body>
 
+<!-- ★ チェックボックスは header の外（menu の直前） -->
+<input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+<header class="header">
+    <!-- ★ ハンバーガーは header の中 -->
+    <label for="menu-toggle" class="menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+</header>
+
+<!-- ★ メニューはチェックボックスのすぐ後ろ -->
+<nav class="menu">
+    <ul>
+        <li><a href="#top">TOP</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#archive">ARCHIVE</a></li>
+        <li><a href="#sns">SNS</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+    </ul>
+</nav>
+
 <header class="header">
 
     <!-- ★ CSSだけで動くメニューのためのチェックボックス -->
@@ -116,3 +139,4 @@
 
 </body>
 </html>
+
