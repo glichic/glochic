@@ -22,6 +22,7 @@ body {
     display: flex;
     align-items: center;       /* ← 中央揃え */
     padding: 0 15px;
+    position: relative;
 }
 
 /* ハンバーガーボタン */
@@ -220,3 +221,4 @@ body {
     padding: 20px;
     background: #111;
 }
+
