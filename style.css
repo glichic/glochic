@@ -125,3 +125,72 @@ body {
     padding: 20px;
     background: #111;
 }
+/* 作品ホバー時の黒幕＋作品名表示 */
+.archive-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.archive-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6); /* 黒い幕 */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.archive-item::after {
+    content: attr(data-caption); /* 作品名を表示 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.archive-item:hover::before,
+.archive-item:hover::after {
+    opacity: 1;
+}/* 作品ホバー時の黒幕＋作品名表示 */
+.archive-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.archive-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6); /* 黒い幕 */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.archive-item::after {
+    content: attr(data-caption); /* 作品名を表示 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.archive-item:hover::before,
+.archive-item:hover::after {
+    opacity: 1;
+}
