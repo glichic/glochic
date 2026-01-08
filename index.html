@@ -21,13 +21,17 @@
         /* ===============================
            ヘッダー
         ================================ */
-        .header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 10px;
-            z-index: 1000;
-        }
+       .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;   /* ← 追加：ヘッダーの高さを固定 */
+    padding: 0 10px;
+    z-index: 1000;
+    background: #000;
+    display: flex;          /* ← 中身を縦中央に */
+    align-items: center;    /* ← 中央揃え */
+}
         
         .menu-btn span {
             display: block;
@@ -68,12 +72,16 @@
     text-decoration: none;
     font-size: 18px;
 }
-        .menu-btn {
+.menu-btn {
     position: fixed;
     top: 15px;
     right: 15px;
     z-index: 1001;
+    width: 40px;   /* ← 追加 */
+    height: 30px;  /* ← 追加 */
+    cursor: pointer;
 }
+
         /* ===============================
            TOP
         ================================ */
@@ -331,6 +339,7 @@ document.getElementById("lightbox").addEventListener("click", () => {
 
 </body>
 </html>
+
 
 
 
