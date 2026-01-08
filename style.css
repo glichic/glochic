@@ -221,7 +221,11 @@ body {
 .footer {
     padding: 20px;
     background: #111;
-}S
+}
+html, body {
+    overflow-x: hidden;
+}
+
 
 
 
