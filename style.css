@@ -37,24 +37,22 @@ html, body {
     margin: 6px 0;
 }
 
-/* ===============================
-   メニュー（左スライド）
-================================ */
+/* メニュー（右側に隠す） */
 .menu {
     position: fixed;
     top: 0;
-    left: -250px; /* ← 完全に隠す */
+    right: -250px; /* ← 右に隠す（幅と同じ値） */
     width: 250px;
     height: 100%;
     background: #111;
     padding: 60px 20px;
-    transition: left 0.3s ease;
+    transition: right 0.3s ease;
     z-index: 1500;
 }
 
-/* ★ チェックが入ったらメニューが出る */
+/* チェックが入ったら左へスライドイン（＝画面内へ） */
 .menu-toggle:checked ~ .menu {
-    left: 0;
+    right: 0; /* ← 右端にピタッと表示 */
 }
 
 /* メニュー内リンク */
@@ -215,3 +213,4 @@ html, body {
     padding: 20px;
     background: #111;
 }
+
