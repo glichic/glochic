@@ -250,3 +250,33 @@ html, body {
     display: block;
     margin: 0 auto;
 }
+
+/* Lightbox画像を画面中央に収める（PC・スマホ両対応） */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 3000;
+}
+
+.lb-toggle:checked ~ .lightbox {
+    display: flex;
+}
+
+/* Lightbox画像のサイズ制限と中央配置 */
+.lightbox img {
+    max-width: 90vw !important;
+    max-height: 90vh !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block;
+    margin: 0 auto;
+}
