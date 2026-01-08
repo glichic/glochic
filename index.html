@@ -6,6 +6,9 @@
     <title>Glochic Official</title>
 
     <style>
+        /* ===============================
+           基本設定
+        ================================ */
         body {
             margin: 0;
             font-family: "Helvetica", "Arial", sans-serif;
@@ -14,7 +17,9 @@
             text-align: center;
         }
 
-        /* ヘッダー */
+        /* ===============================
+           ヘッダー
+        ================================ */
         .header {
             position: fixed;
             top: 0;
@@ -34,7 +39,9 @@
             margin: 6px 0;
         }
 
-        /* メニュー */
+        /* ===============================
+           メニュー
+        ================================ */
         .menu {
             display: none;
             background: #111;
@@ -55,7 +62,9 @@
             text-decoration: none;
         }
 
-        /* TOP */
+        /* ===============================
+           TOP
+        ================================ */
         .top {
             position: relative;
             padding-top: 60px;
@@ -81,15 +90,20 @@
             background: transparent;
         }
 
-        /* ABOUT / ARCHIVE */
-        .about h2, .archive h2 {
+        /* ===============================
+           ABOUT / ARCHIVE
+        ================================ */
+        .about h2,
+        .archive h2 {
             margin-top: 40px;
         }
 
-        /* ARCHIVE グリッド */
+        /* ===============================
+           ARCHIVE グリッド（3×4）
+        ================================ */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr); /* ← 横3列 */
             gap: 10px;
             padding: 10px;
         }
@@ -101,10 +115,14 @@
 
         .archive-item img {
             width: 100%;
+            height: 200px;      /* ← 高さ固定 */
+            object-fit: cover;  /* ← トリミングして均一に */
             display: block;
         }
 
-        /* 作品ホバー時の黒幕＋作品名表示 */
+        /* ===============================
+           作品ホバー時の黒幕＋作品名表示
+        ================================ */
         .archive-item::before {
             content: "";
             position: absolute;
@@ -136,7 +154,9 @@
             opacity: 1;
         }
 
-        /* SNS */
+        /* ===============================
+           SNS
+        ================================ */
         .sns-icons {
             display: flex;
             justify-content: center;
@@ -147,7 +167,9 @@
             width: 40px;
         }
 
-        /* Lightbox */
+        /* ===============================
+           Lightbox
+        ================================ */
         .lightbox {
             display: none;
             position: fixed;
@@ -165,7 +187,14 @@
             max-width: 500px;
         }
 
-        /* フッター */
+        /* Lightbox 表示用 */
+        .lightbox.show {
+            display: flex;
+        }
+
+        /* ===============================
+           フッター
+        ================================ */
         .footer {
             padding: 20px;
             background: #111;
@@ -268,10 +297,6 @@
 function toggleMenu() {
     document.getElementById("menu").classList.toggle("open");
 }
-<script>
-function toggleMenu() {
-    document.getElementById("menu").classList.toggle("open");
-}
 
 // ライトボックス機能
 document.querySelectorAll(".archive-item img").forEach(img => {
@@ -280,8 +305,8 @@ document.querySelectorAll(".archive-item img").forEach(img => {
         const lightboxImg = document.getElementById("lightbox-img");
         const lightboxCaption = document.getElementById("lightbox-caption");
 
-        lightboxImg.src = img.src; // 画像を拡大表示
-        lightboxCaption.textContent = img.parentElement.dataset.caption; // 作品名
+        lightboxImg.src = img.src;
+        lightboxCaption.textContent = img.parentElement.dataset.caption;
         lightbox.classList.add("show");
     });
 });
@@ -291,13 +316,6 @@ document.getElementById("lightbox").addEventListener("click", () => {
     document.getElementById("lightbox").classList.remove("show");
 });
 </script>
-    /* Lightbox 表示用 */
-.lightbox.show {
-    display: flex;
-}    
+
 </body>
 </html>
-
-
-
-
