@@ -43,11 +43,12 @@ html, body {
 .menu {
     position: fixed;
     top: 0;
-    right: -350px; /* ← 完全に隠れる幅（最適値） */
+    right: -340px; /* ← PCでもスマホでも完全に隠れる最適値 */
     width: 250px;
     height: 100%;
     background: #111;
     padding: 60px 20px;
+    box-sizing: border-box; /* ← これが超重要！幅が正しく計算される */
     transition: right 0.3s ease;
     z-index: 1500;
 }
@@ -215,4 +216,3 @@ html, body {
     padding: 20px;
     background: #111;
 }
-
