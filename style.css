@@ -159,8 +159,4 @@ body {
 .archive-item:hover::before,
 .archive-item:hover::after {
     opacity: 1;
-}/* 作品ホバー時の黒幕＋作品名表示 */
-.archive-item {
-    position: relative;
-    overflow: hidden;
 }
