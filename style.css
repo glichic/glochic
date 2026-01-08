@@ -1,49 +1,32 @@
 /* ===============================
    基本設定
 ================================ */
-body {
+html, body {
     margin: 0;
-    font-family: "Helvetica", "Arial", sans-serif;
+    padding: 0;
+    overflow-x: hidden;
     background: #000;
     color: #fff;
+    font-family: "Helvetica", "Arial", sans-serif;
     text-align: center;
 }
 
-html, body {
-    overflow-x: hidden;
-}
-
 /* ===============================
-   ヘッダー
-================================ */
-.header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 60px;
-    background: #000;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    padding: 0 15px;
-}
-
-/* ===============================
-   ハンバーガーボタン（CSSだけで動く）
+   ハンバーガー（CSSだけで動く）
 ================================ */
 .menu-toggle {
-    display: none;
+    display: none; /* ← 非表示のチェックボックス */
 }
 
+/* ハンバーガーの3本線（右上固定） */
 .menu-btn {
-    position: absolute;
+    position: fixed;
     right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 15px;
     width: 40px;
     height: 30px;
     cursor: pointer;
-    z-index: 1100;
+    z-index: 2000;
 }
 
 .menu-btn span {
@@ -60,20 +43,21 @@ html, body {
 .menu {
     position: fixed;
     top: 0;
-    left: -250px;
+    left: -250px; /* ← 完全に隠す */
     width: 250px;
     height: 100%;
     background: #111;
     padding: 60px 20px;
     transition: left 0.3s ease;
-    z-index: 2000;
+    z-index: 1500;
 }
 
-/* ★ チェックが入ったらメニューを表示 */
+/* ★ チェックが入ったらメニューが出る */
 .menu-toggle:checked ~ .menu {
     left: 0;
 }
 
+/* メニュー内リンク */
 .menu ul {
     list-style: none;
     padding: 0;
@@ -94,7 +78,6 @@ html, body {
    TOP
 ================================ */
 .top {
-    position: relative;
     padding-top: 60px;
 }
 
