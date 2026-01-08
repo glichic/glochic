@@ -220,3 +220,12 @@ html, body {
     padding: 20px;
     background: #111;
 }
+
+/* Lightbox の画像は幅100%にしない（PC版の巨大化防止） */
+.lightbox img {
+    width: auto !important;
+    max-width: 90% !important;
+    height: auto !important;
+    margin: 0 auto;
+    display: block;
+}
