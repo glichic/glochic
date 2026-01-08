@@ -1,5 +1,5 @@
 /* ===============================
-   ARCHIVE（完全版）
+   ARCHIVE（PC版）
 ================================ */
 .archive {
     padding: 40px 10px;
@@ -15,7 +15,6 @@
 .work {
     position: relative;
     width: 100%;
-    height: 100%;
 }
 
 /* クリック領域（サムネイル） */
@@ -27,7 +26,7 @@
     overflow: hidden;
 }
 
-/* サムネイル画像 */
+/* サムネイル画像（PCは高さ200px固定） */
 .archive-item img {
     display: block;
     width: 100%;
@@ -72,19 +71,21 @@
     opacity: 1;
 }
 
+
 /* ===============================
-   スマホ表示の完全修正（600px以下）
+   スマホ表示（600px以下）
 ================================ */
 @media screen and (max-width: 600px) {
-  /* グリッドを1列に */
+
+  /* グリッドを1列に（最重要） */
   .grid-container {
     grid-template-columns: 1fr;
     gap: 20px;
   }
 
-  /* 作品枠を4:3比率で維持 */
+  /* サムネイルを4:3比率にする */
   .archive-item {
-    padding-top: 75%;
+    padding-top: 75%; /* ← 4:3比率 */
   }
 
   .archive-item img {
@@ -96,7 +97,12 @@
     object-fit: cover;
   }
 
-  /* メニューの文字サイズと余白調整 */
+  /* メニューの調整 */
+  .menu {
+    width: 100vw;
+    left: 0;
+  }
+
   .menu ul {
     flex-direction: column;
     gap: 12px;
@@ -116,7 +122,7 @@
     margin: 0 auto;
   }
 
-  /* テキストの読みやすさ調整 */
+  /* ABOUT / CONTACT の文字調整 */
   .about p,
   .contact p {
     font-size: 15px;
