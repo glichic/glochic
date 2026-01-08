@@ -11,7 +11,7 @@
             font-family: "Helvetica", "Arial", sans-serif;
             background: #000;
             color: #fff;
-            text-align: center; /* ★ 全て中央揃え */
+            text-align: center;
         }
 
         /* ヘッダー */
@@ -93,15 +93,53 @@
             gap: 10px;
             padding: 10px;
         }
+
+        .archive-item {
+            position: relative;
+            overflow: hidden;
+        }
+
         .archive-item img {
             width: 100%;
             display: block;
         }
 
+        /* 作品ホバー時の黒幕＋作品名表示 */
+        .archive-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .archive-item::after {
+            content: attr(data-caption);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 16px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .archive-item:hover::before,
+        .archive-item:hover::after {
+            opacity: 1;
+        }
+
         /* SNS */
         .sns-icons {
             display: flex;
-            justify-content: center; /* ★ SNS アイコン中央揃え */
+            justify-content: center;
             gap: 20px;
             margin-top: 20px;
         }
