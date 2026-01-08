@@ -268,7 +268,29 @@
 function toggleMenu() {
     document.getElementById("menu").classList.toggle("open");
 }
-</script>
+<script>
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("open");
+}
 
+// ライトボックス機能
+document.querySelectorAll(".archive-item img").forEach(img => {
+    img.addEventListener("click", () => {
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const lightboxCaption = document.getElementById("lightbox-caption");
+
+        lightboxImg.src = img.src; // 画像を拡大表示
+        lightboxCaption.textContent = img.parentElement.dataset.caption; // 作品名
+        lightbox.classList.add("show");
+    });
+});
+
+// ライトボックスをクリックしたら閉じる
+document.getElementById("lightbox").addEventListener("click", () => {
+    document.getElementById("lightbox").classList.remove("show");
+});
+</script>
 </body>
 </html>
+
