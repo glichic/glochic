@@ -195,19 +195,14 @@ html, body {
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.8);
-    justify-content: center;
-    align-items: center;
     z-index: 3000;
 }
 
-.lightbox img {
-    width: 80%;
-    max-width: 500px;
-}
-
-/* :target で Lightbox を表示（JS 不使用） */
+/* :target で表示するときに flex にする */
 .lightbox:target {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* ===============================
@@ -216,4 +211,9 @@ html, body {
 .footer {
     padding: 20px;
     background: #111;
+}
+
+.archive-item::before,
+.archive-item::after {
+    pointer-events: none !important;
 }
