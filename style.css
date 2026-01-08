@@ -12,7 +12,7 @@ html, body {
 }
 
 /* ===============================
-   ハンバーガー（CSSだけで動く）
+   ハンバーガー
 ================================ */
 .menu-toggle {
     display: none;
@@ -37,7 +37,7 @@ html, body {
 }
 
 /* ===============================
-   メニュー（右側スライド）
+   メニュー（右スライド）
 ================================ */
 .menu {
     position: fixed;
@@ -104,15 +104,7 @@ html, body {
 }
 
 /* ===============================
-   ABOUT / ARCHIVE
-================================ */
-.about h2,
-.archive h2 {
-    margin-top: 40px;
-}
-
-/* ===============================
-   ARCHIVE グリッド
+   ARCHIVE
 ================================ */
 .grid-container {
     display: grid;
@@ -130,12 +122,14 @@ html, body {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    display: block;
 }
 
-/* ===============================
-   作品ホバー
-================================ */
+/* ホバー演出 */
+.archive-item::before,
+.archive-item::after {
+    pointer-events: none !important;
+}
+
 .archive-item::before {
     content: "";
     position: absolute;
@@ -146,7 +140,6 @@ html, body {
     background: rgba(0,0,0,0.6);
     opacity: 0;
     transition: opacity 0.3s ease;
-    pointer-events: none !important;
 }
 
 .archive-item::after {
@@ -156,15 +149,56 @@ html, body {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
-    font-size: 16px;
     opacity: 0;
     transition: opacity 0.3s ease;
-    pointer-events: none !important;
 }
 
 .archive-item:hover::before,
 .archive-item:hover::after {
     opacity: 1;
+}
+
+/* ===============================
+   Lightbox（チェックボックス方式）
+================================ */
+.lb-toggle {
+    display: none;
+}
+
+.lb-toggle:checked + .lightbox,
+.lb-toggle:checked ~ .lightbox {
+    display: flex;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 3000;
+}
+
+/* Lightbox 画像 */
+.lightbox img {
+    width: auto !important;
+    max-width: 90% !important;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* ✖ ボタン */
+.lb-close {
+    font-size: 32px;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 20px;
+    user-select: none;
 }
 
 /* ===============================
@@ -182,38 +216,9 @@ html, body {
 }
 
 /* ===============================
-   CSS-only Lightbox（完全版）
-================================ */
-.lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.8);
-    z-index: 3000;
-}
-
-/* :target で表示するときに flex を有効化 */
-.lightbox:target {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.lightbox img {
-    width: auto !important;
-    max-width: 90% !important;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-}
-/* ===============================
    フッター
 ================================ */
 .footer {
     padding: 20px;
     background: #111;
 }
-
