@@ -3,27 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-
+    <title>Glochic Official</title>
     <style>
-        picture, img {
-            max-width: 100%;
+        body {
+            margin: 0;
+            font-family: "Helvetica", "Arial", sans-serif;
+            background: #000;
+            color: #fff;
+        }
+
+        /* ヘッダー */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 10px;
+            z-index: 1000;
+        }
+
+        .menu-btn {
+            width: 30px;
+            cursor: pointer;
+        }
+        .menu-btn span {
+            display: block;
+            height: 3px;
+            background: #fff;
+            margin: 6px 0;
+        }
+
+        /* メニュー */
+        .menu {
+            display: none;
+            background: #111;
+            padding: 20px;
+        }
+        .menu.open {
+            display: block;
+        }
+        .menu ul {
+            list-style: none;
+            padding: 0;
+        }
+        .menu li {
+            margin: 10px 0;
+        }
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* TOP */
+        .top {
+            position: relative;
+            text-align: center;
+            padding-top: 80px;
+        }
+        .top-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ★ ボタンをヘッダー寄りに上げる */
+        .top-buttons {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: 1px solid #fff;
+            margin: 0 10px;
+            text-decoration: none;
+            color: #fff;
+        }
+        .btn-outline {
+            background: transparent;
+        }
+
+        /* ★ ABOUT & ARCHIVE を完全に縦並びに戻す */
+        .about-archive-wrapper {
+            display: block; /* ← これが最重要 */
+            padding: 20px;
+        }
+
+        .about, .archive {
+            margin-bottom: 40px;
+        }
+
+        .about h2, .archive h2 {
+            text-align: center;
+        }
+
+        /* ARCHIVE グリッド */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            padding: 10px;
+        }
+        .archive-item img {
             width: 100%;
             display: block;
         }
-    </style>
 
-    <title>Glochic Official</title>
+        /* SNS */
+        .sns {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .sns-icons img {
+            width: 40px;
+            margin: 10px;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .lightbox img {
+            width: 80%;
+            max-width: 500px;
+        }
+
+        /* CONTACT */
+        .contact {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* フッター */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #111;
+        }
+
+        /* スマホ調整（縦並びは維持） */
+        @media (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .top-buttons {
+                top: 30px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<!-- ハンバーガー -->
-<input type="checkbox" id="menu-toggle" class="menu-toggle">
-<label for="menu-toggle" class="menu-btn">
-    <span></span><span></span><span></span>
-</label>
+<header class="header">
+   <div class="menu-btn" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+   </div>
+</header>
 
-<nav class="menu">
+<nav id="menu" class="menu">
     <ul>
         <li><a href="#top">TOP</a></li>
         <li><a href="#about">ABOUT</a></li>
@@ -36,7 +186,7 @@
 <section id="top" class="top">
     <picture>
         <source srcset="images/sumaaho-Header.png" media="(max-width: 600px)">
-        <img src="images/glochic-header.png" class="top-img">
+        <img src="images/glochic-header.png" class="top-img" alt="Glochic Header">
     </picture>
 
     <div class="top-buttons">
@@ -45,8 +195,11 @@
     </div>
 </section>
 
+<!-- ★ ABOUT と ARCHIVE を縦並びに戻す -->
+<div class="about-archive-wrapper">
+
 <section id="about" class="about">
-    <h2>ABOUT Glochic</h2>
+    <h2>ABOUT</h2>
     <p>
         流行ではなく、<br>
         違和感を纏うために。<br><br>
@@ -60,162 +213,70 @@
     <h2>Glochic Archive</h2>
 
     <div class="grid-container">
-
-        <!-- 作品01 -->
-        <div class="work">
-            <input type="checkbox" id="lb01" class="lb-toggle">
-            <label for="lb01" class="archive-item" data-caption="作品 01">
-                <img src="images/work01.png" alt="">
-            </label>
-            <div class="lightbox">
-                <label for="lb01" class="lb-close">✖</label>
-                <img src="images/work01.png" alt="">
-            </div>
+        <div class="archive-item" data-caption="作品 01">
+            <img src="images/work01.png" alt="作品 01">
         </div>
-
-        <!-- 作品02 -->
-        <div class="work">
-            <input type="checkbox" id="lb02" class="lb-toggle">
-            <label for="lb02" class="archive-item" data-caption="作品 02">
-                <img src="images/work02.png" alt="">
-            </label>
-            <div class="lightbox">
-                <label for="lb02" class="lb-close">✖</label>
-                <img src="images/work02.png" alt="">
-            </div>
+        <div class="archive-item" data-caption="作品 02">
+            <img src="images/work02.png" alt="作品 02">
         </div>
-
-        <!-- 作品03 -->
-        <div class="work">
-            <input type="checkbox" id="lb03" class="lb-toggle">
-            <label for="lb03" class="archive-item" data-caption="作品 03">
-                <img src="images/work03.png" alt="">
-            </label>
-            <div class="lightbox">
-                <label for="lb03" class="lb-close">✖</label>
-                <img src="images/work03.png" alt="">
-            </div>
+        <div class="archive-item" data-caption="作品 03">
+            <img src="images/work03.png" alt="作品 03">
         </div>
-
-        <!-- 作品04 -->
-        <div class="work">
-            <input type="checkbox" id="lb04" class="lb-toggle">
-            <label for="lb04" class="archive-item" data-caption="作品 04">
-                <img src="images/work04.png" alt="">
-            </label>
-            <div class="lightbox">
-                <label for="lb04" class="lb-close">✖</label>
-                <img src="images/work04.png" alt="">
-            </div>
+        <div class="archive-item" data-caption="作品 04">
+            <img src="images/work04.png" alt="作品 04">
         </div>
-
-        <!-- 作品05 -->
-        <div class="work">
-            <input type="checkbox" id="lb05" class="lb-toggle">
-            <label for="lb05" class="archive-item" data-caption="作品 05">
-                <img src="images/work05.png" alt="">
-            </label>
-            <div class="lightbox">
-                <label for="lb05" class="lb-close">✖</label>
-                <img src="images/work05.png" alt="">
-            </div>
+        <div class="archive-item" data-caption="作品 05">
+            <img src="images/work05.png" alt="作品 05">
         </div>
-
-        <!-- 作品06 -->
-        <div class="work">
-            <input type="checkbox" id="lb06" class="lb-toggle">
-            <label for="lb06" class="archive-item" data-caption="作品 06">
-                <img src="images/work06.png" alt="">
-            </label>
-            <div class="lightbox">
-                <label for="lb06" class="lb-close">✖</label>
-                <img src="images/work06.png" alt="">
-            </div>
+        <div class="archive-item" data-caption="作品 06">
+            <img src="images/work06.png" alt="作品 06">
         </div>
-
-        <!-- 作品07 -->
-        <div class="work">
-            <input type="checkbox" id="lb07" class="lb-toggle">
-            <label for="lb07" class="archive-item" data-caption="作品 07">
-                <img src="images/work07.png" alt="">
-            </label>
-            <div class="lightbox">
-                <label for="lb07" class="lb-close">✖</label>
-                <img src="images/work07.png" alt="">
-            </div>
+        <div class="archive-item" data-caption="作品 07">
+            <img src="images/work07.png" alt="作品 07">
         </div>
-
-        <!-- 作品08 -->
-        <div class="work">
-            <input type="checkbox" id="lb08" class="lb-toggle">
-            <label for="lb08" class="archive-item" data-caption="作品 08">
-                <img src="images/work08.png" alt="">
-            </label>
-            <div class="lightbox">
-                <label for="lb08" class="lb-close">✖</label>
-                <img src="images/work08.png" alt="">
-            </div>
+        <div class="archive-item" data-caption="作品 08">
+            <img src="images/work08.png" alt="作品 08">
         </div>
-
-        <!-- 作品09 -->
-        <div class="work">
-            <input type="checkbox" id="lb09" class="lb-toggle">
-            <label for="lb09" class="archive-item" data-caption="作品 09">
-                <img src="images/work09.png" alt="">
-            </label>
-            <div class="lightbox">
-                <label for="lb09" class="lb-close">✖</label>
-                <img src="images/work09.png" alt="">
-            </div>
+        <div class="archive-item" data-caption="作品 09">
+            <img src="images/work09.png" alt="作品 09">
         </div>
-
-        <!-- 作品10 -->
-        <div class="work">
-            <input type="checkbox" id="lb10" class="lb-toggle">
-            <label for="lb10" class="archive-item" data-caption="作品 10">
-                <img src="images/work10.png" alt="">
-            </label>
-            <div class="lightbox">
-                <label for="lb10" class="lb-close">✖</label>
-                <img src="images/work10.png" alt="">
-            </div>
+        <div class="archive-item" data-caption="作品 10">
+            <img src="images/work10.png" alt="作品 10">
         </div>
-
-        <!-- 作品11 -->
-        <div class="work">
-            <input type="checkbox" id="lb11" class="lb-toggle">
-            <label for="lb11" class="archive-item" data-caption="作品 11">
-                <img src="images/work11.png" alt="">
-            </label>
-            <div class="lightbox">
-                <label for="lb11" class="lb-close">✖</label>
-                <img src="images/work11.png" alt="">
-            </div>
+        <div class="archive-item" data-caption="作品 11">
+            <img src="images/work11.png" alt="作品 11">
         </div>
-
-        <!-- 作品12 -->
-        <div class="work">
-            <input type="checkbox" id="lb12" class="lb-toggle">
-            <label for="lb12" class="archive-item" data-caption="作品 12">
-                <img src="images/work12.png" alt="">
-            </label>
-            <div class="lightbox">
-                <label for="lb12" class="lb-close">✖</label>
-                <img src="images/work12.png" alt="">
-            </div>
+        <div class="archive-item" data-caption="作品 12">
+            <img src="images/work12.png" alt="作品 12">
         </div>
-
     </div>
 </section>
+
+</div><!-- /about-archive-wrapper -->
+
+<div id="lightbox" class="lightbox">
+    <img id="lightbox-img" alt="">
+    <p id="lightbox-caption"></p>
+</div>
 
 <section id="sns" class="sns">
     <h2>SNS</h2>
     <div class="sns-icons">
-        <a href="#"><img src="images/twitter.png"></a>
-        <a href="#"><img src="images/instagram.png"></a>
-        <a href="#"><img src="images/tiktok.png"></a>
-        <a href="#"><img src="images/mercari.png"></a>
-        <a href="#"><img src="images/base.png"></a>
+        <a href="https://x.com/glochic_?s=21" target="_blank">
+            <img src="images/twitter.png" alt="Twitter">
+        </a>
+        <a href="https://www.instagram.com/glochic_?igsh=MTh5bng0ZW1qOHg1aw==" target="_blank">
+            <img src="images/instagram.png" alt="Instagram">
+        </a>
+        <a href="https://tiktok.com/" target="_blank">
+            <img src="images/tiktok.png" alt="TikTok">
+        </a>
+        <a href="https://jp.mercari.com/user/profile/672286854/" target="_blank">
+            <img src="images/mercari.png" alt="Mercari">
+        </a>
+        <a href="https://220.base.ec/" target="_blank">
+            <img src="images/base.png" alt="BASE">
+        </a>
     </div>
 </section>
 
@@ -231,6 +292,25 @@
 <footer class="footer">
     <p>© 2026 Glochic</p>
 </footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("open");
+}
+
+document.querySelectorAll(".archive-item").forEach(item => {
+    item.addEventListener("click", () => {
+        const img = item.querySelector("img");
+        document.getElementById("lightbox").style.display = "flex";
+        document.getElementById("lightbox-img").src = img.src;
+        document.getElementById("lightbox-caption").textContent = item.getAttribute("data-caption");
+    });
+});
+
+document.getElementById("lightbox").addEventListener("click", () => {
+    document.getElementById("lightbox").style.display = "none";
+});
+</script>
 
 </body>
 </html>
