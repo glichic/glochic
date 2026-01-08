@@ -16,13 +16,13 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 60px;              /* ← 高さ固定で途切れ防止 */
-    background: #000;          /* ← 黒背景を明示 */
+    height: 60px;
+    background: #000;
     z-index: 1000;
     display: flex;
-    align-items: center;       /* ← 中央揃え */
+    align-items: center;
     padding: 0 15px;
-    position: relative;
+    position: relative; /* ← ハンバーガーの基準 */
 }
 
 /* ハンバーガーボタン */
@@ -30,7 +30,7 @@ body {
     position: absolute;
     right: 15px;
     top: 50%;
-    transform: translateY(-50%); /* ← 完全中央揃え */
+    transform: translateY(-50%);
     width: 40px;
     height: 30px;
     cursor: pointer;
@@ -51,11 +51,11 @@ body {
 .menu {
     position: fixed;
     top: 0;
-    right: -260px;             /* ← 初期は隠す */
+    right: -260px; /* ← 完全に隠すため260px */
     width: 250px;
     height: 100%;
     background: #111;
-    padding: 60px 20px;        /* ← ヘッダーと被らないように上60px */
+    padding: 60px 20px; /* ← ヘッダーと重ならない */
     transition: right 0.3s ease;
     z-index: 2000;
 }
@@ -221,5 +221,3 @@ body {
     padding: 20px;
     background: #111;
 }
-
-
