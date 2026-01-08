@@ -41,13 +41,17 @@ html, body {
 .menu {
     position: fixed;
     top: 0;
-    right: -300px; /* ← 右に隠す（幅と同じ値） */
+    right: -300px; /* ← ここを増やすだけで完全に隠れる */
     width: 250px;
     height: 100%;
     background: #111;
     padding: 60px 20px;
     transition: right 0.3s ease;
     z-index: 1500;
+}
+
+.menu-toggle:checked ~ .menu {
+    right: 0;
 }
 
 /* チェックが入ったら左へスライドイン（＝画面内へ） */
@@ -213,5 +217,6 @@ html, body {
     padding: 20px;
     background: #111;
 }
+
 
 
