@@ -52,7 +52,7 @@ body {
 .menu {
     position: fixed;
     top: 0;
-    right: -100px;
+    right: -250px; /* ← ここが最重要 */
     width: 250px;
     height: 100%;
     background: #111;
@@ -225,6 +225,7 @@ body {
 html, body {
     overflow-x: hidden;
 }
+
 
 
 
