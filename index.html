@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glochic Official</title>
+
     <style>
         body {
             margin: 0;
             font-family: "Helvetica", "Arial", sans-serif;
             background: #000;
             color: #fff;
+            text-align: center; /* ★ 全て中央揃え */
         }
 
         /* ヘッダー */
@@ -56,20 +58,22 @@
         /* TOP */
         .top {
             position: relative;
-            text-align: center;
             padding-top: 60px;
         }
         .top-img {
             width: 100%;
             height: auto;
         }
+
         .top-buttons {
             margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
         .btn {
             padding: 10px 20px;
             border: 1px solid #fff;
-            margin: 0 10px;
             text-decoration: none;
             color: #fff;
         }
@@ -77,8 +81,9 @@
             background: transparent;
         }
 
+        /* ABOUT / ARCHIVE */
         .about h2, .archive h2 {
-            text-align: center;
+            margin-top: 40px;
         }
 
         /* ARCHIVE グリッド */
@@ -94,9 +99,14 @@
         }
 
         /* SNS */
+        .sns-icons {
+            display: flex;
+            justify-content: center; /* ★ SNS アイコン中央揃え */
+            gap: 20px;
+            margin-top: 20px;
+        }
         .sns-icons img {
             width: 40px;
-            margin: 10px;
         }
 
         /* Lightbox */
@@ -119,23 +129,12 @@
 
         /* フッター */
         .footer {
-            text-align: center;
             padding: 20px;
             background: #111;
         }
-
-        /* スマホ対応（600px以下でも横並び維持） */
-        @media (max-width: 600px) {
-            .about-archive-wrapper {
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
-            .about, .archive {
-                flex: 1 1 100%;
-            }
-        }
     </style>
 </head>
+
 <body>
 
 <header class="header">
@@ -177,52 +176,26 @@
         日常に落とし込む。<br><br>
         Glochic は、あなたの“ありのまま”を愛するブランドです。
     </p>
-    </section>
+</section>
 
 <section id="archive" class="archive">
     <h2>Glochic Archive</h2>
 
     <div class="grid-container">
-        <div class="archive-item" data-caption="作品 01">
-            <img src="images/work01.png" alt="作品 01">
-        </div>
-        <div class="archive-item" data-caption="作品 02">
-            <img src="images/work02.png" alt="作品 02">
-        </div>
-        <div class="archive-item" data-caption="作品 03">
-            <img src="images/work03.png" alt="作品 03">
-        </div>
-        <div class="archive-item" data-caption="作品 04">
-            <img src="images/work04.png" alt="作品 04">
-        </div>
-        <div class="archive-item" data-caption="作品 05">
-            <img src="images/work05.png" alt="作品 05">
-        </div>
-        <div class="archive-item" data-caption="作品 06">
-            <img src="images/work06.png" alt="作品 06">
-        </div>
-        <div class="archive-item" data-caption="作品 07">
-            <img src="images/work07.png" alt="作品 07">
-        </div>
-        <div class="archive-item" data-caption="作品 08">
-            <img src="images/work08.png" alt="作品 08">
-        </div>
-        <div class="archive-item" data-caption="作品 09">
-            <img src="images/work09.png" alt="作品 09">
-        </div>
-        <div class="archive-item" data-caption="作品 10">
-            <img src="images/work10.png" alt="作品 10">
-        </div>
-        <div class="archive-item" data-caption="作品 11">
-            <img src="images/work11.png" alt="作品 11">
-        </div>
-        <div class="archive-item" data-caption="作品 12">
-            <img src="images/work12.png" alt="作品 12">
-        </div>
+        <div class="archive-item" data-caption="作品 01"><img src="images/work01.png"></div>
+        <div class="archive-item" data-caption="作品 02"><img src="images/work02.png"></div>
+        <div class="archive-item" data-caption="作品 03"><img src="images/work03.png"></div>
+        <div class="archive-item" data-caption="作品 04"><img src="images/work04.png"></div>
+        <div class="archive-item" data-caption="作品 05"><img src="images/work05.png"></div>
+        <div class="archive-item" data-caption="作品 06"><img src="images/work06.png"></div>
+        <div class="archive-item" data-caption="作品 07"><img src="images/work07.png"></div>
+        <div class="archive-item" data-caption="作品 08"><img src="images/work08.png"></div>
+        <div class="archive-item" data-caption="作品 09"><img src="images/work09.png"></div>
+        <div class="archive-item" data-caption="作品 10"><img src="images/work10.png"></div>
+        <div class="archive-item" data-caption="作品 11"><img src="images/work11.png"></div>
+        <div class="archive-item" data-caption="作品 12"><img src="images/work12.png"></div>
     </div>
 </section>
-
-</div><!-- /about-archive-wrapper -->
 
 <div id="lightbox" class="lightbox">
     <img id="lightbox-img" alt="">
@@ -232,21 +205,11 @@
 <section id="sns" class="sns">
     <h2>SNS</h2>
     <div class="sns-icons">
-        <a href="https://x.com/glochic_?s=21" target="_blank">
-            <img src="images/twitter.png" alt="Twitter">
-        </a>
-        <a href="https://www.instagram.com/glochic_?igsh=MTh5bng0ZW1qOHg1aw==" target="_blank">
-            <img src="images/instagram.png" alt="Instagram">
-        </a>
-        <a href="https://tiktok.com/" target="_blank">
-            <img src="images/tiktok.png" alt="TikTok">
-        </a>
-        <a href="https://jp.mercari.com/user/profile/672286854/" target="_blank">
-            <img src="images/mercari.png" alt="Mercari">
-        </a>
-        <a href="https://220.base.ec/" target="_blank">
-            <img src="images/base.png" alt="BASE">
-        </a>
+        <a href="#"><img src="images/twitter.png"></a>
+        <a href="#"><img src="images/instagram.png"></a>
+        <a href="#"><img src="images/tiktok.png"></a>
+        <a href="#"><img src="images/mercari.png"></a>
+        <a href="#"><img src="images/base.png"></a>
     </div>
 </section>
 
@@ -267,24 +230,7 @@
 function toggleMenu() {
     document.getElementById("menu").classList.toggle("open");
 }
-
-document.querySelectorAll(".archive-item").forEach(item => {
-    item.addEventListener("click", () => {
-        const img = item.querySelector("img");
-        document.getElementById("lightbox").style.display = "flex";
-        document.getElementById("lightbox-img").src = img.src;
-        document.getElementById("lightbox-caption").textContent = item.getAttribute("data-caption");
-    });
-});
-
-document.getElementById("lightbox").addEventListener("click", () => {
-    document.getElementById("lightbox").style.display = "none";
-});
 </script>
 
 </body>
 </html>
-
-
-
-
