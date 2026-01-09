@@ -245,7 +245,7 @@ body {
 @media screen and (max-width: 600px) {
 
     .top {
-        height: 360px; /* ← スマホ用の画像高さ */
+        height: 360px;
     }
 
     .top-img {
@@ -255,8 +255,8 @@ body {
     }
 
     .top-content {
-        position: absolute; /* ← 重要：relative にしない */
-        top: 70%; /* ← スマホ画像に合わせて少し下げる */
+        position: absolute;
+        top: 70%; /* ← ここを変えれば下がる */
         left: 50%;
         transform: translate(-50%, -50%);
         flex-direction: row;
@@ -268,7 +268,6 @@ body {
         min-width: 110px;
         font-size: 14px;
     }
-}
 
     .grid-container {
         grid-template-columns: repeat(2, 1fr);
@@ -277,7 +276,7 @@ body {
     .archive-item img {
         height: 200px;
     }
-}
+}  /* ← ここで正しく終わり */
 
 /* PC版フォント拡大 */
 @media screen and (min-width: 601px) {
@@ -297,6 +296,7 @@ body {
         font-size: 20px;
     }
 }
+
 
 
 
