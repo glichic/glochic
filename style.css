@@ -93,7 +93,7 @@ body {
 /* ボタンを画像の中に重ねる */
 .top-content {
     position: absolute;
-    top: 58%; /* ← 画像内テキストの2改行分下あたり */
+    top: 65%; /* ← 画像内テキストの2改行分下あたり */
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -297,6 +297,7 @@ body {
         font-size: 20px;
     }
 }
+
 
 
 
