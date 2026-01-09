@@ -80,12 +80,11 @@ body {
     letter-spacing: 2px;
 }
 
-/* TOP */
 .top {
     position: relative;
     width: 100%;
-    height: 100vh;
-    margin-top: 70px;
+    height: 100svh; /* スマホでも正しく動く */
+    padding-top: 70px; /* ヘッダー分の余白を安全に確保 */
     overflow: hidden;
 }
 
@@ -291,3 +290,4 @@ body {
         height: 200px;
     }
 }
+
