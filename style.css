@@ -515,4 +515,17 @@ body {
         height: 200px;
     }
 }
+/* PC版フォント拡大 */
+@media screen and (min-width: 601px) {
+    body {
+        font-size: 18px;   /* ← 全体の文字を大きく */
+    }
 
+    h2 {
+        font-size: 32px;   /* ← 見出しも少し大きく */
+    }
+
+    .btn, .btn-outline {
+        font-size: 18px;   /* ← ボタン文字も大きく */
+    }
+}
