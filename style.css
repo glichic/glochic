@@ -259,10 +259,13 @@ body {
         position: relative;
     }
 
-    .btn, .btn-outline {
-        width: auto;                   /* ← 幅を自動に戻す */
-        margin: 0;
-    }
+.btn, .btn-outline {
+    min-width: 120px;       /* ← 最小幅を確保 */
+    flex-shrink: 0;         /* ← 縮まないようにする */
+}
+.top-content {
+    flex-wrap: nowrap;      /* ← 折り返しを禁止 */
+}
 
     .grid-container {
         grid-template-columns: repeat(2, 1fr);
@@ -272,4 +275,5 @@ body {
         height: 200px;
     }
 }
+
 
