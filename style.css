@@ -88,7 +88,7 @@ body {
 
 /* 画像の下にボタンを置く（PC・スマホ共通） */
 .top-content {
-    margin-top: 20px;   /* ← ここで上下の距離を調整（20pxが最適） */
+    margin-top: 10px;   /* ← ここで上下の距離を調整（20pxが最適） */
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -239,7 +239,7 @@ body {
 @media screen and (max-width: 600px) {
 
     .top-content {
-        margin-top: 20px;  /* ← スマホも同じ距離に統一 */
+        margin-top: 10px;  /* ← スマホも同じ距離に統一 */
         gap: 16px;
     }
 
@@ -267,3 +267,4 @@ body {
         font-size: 20px;
     }
 }
+
