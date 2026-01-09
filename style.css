@@ -245,24 +245,30 @@ body {
         height: auto;
         overflow: visible;
     }
+
     .top-img {
         height: auto;
         object-fit: cover;
         object-position: top;
     }
+
     .top-content {
-        flex-direction: column;
-        gap: 12px;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
         margin-top: 25px;
         position: relative;
     }
+
     .btn, .btn-outline {
-        width: 80%;
-        margin: 0 auto;
+        width: auto;
+        margin: 0;
     }
+
     .grid-container {
         grid-template-columns: repeat(2, 1fr);
     }
+
     .archive-item img {
         height: 200px;
     }
