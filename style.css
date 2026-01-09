@@ -242,34 +242,33 @@ body {
     opacity: 0.7;
 }
 
-/* スマホ調整 */
 @media screen and (max-width: 600px) {
+
     .top {
-        margin-top: 70px;
-        height: auto;
-        overflow: visible;
+        height: 360px; /* ← スマホ用の画像高さ */
     }
 
     .top-img {
-        height: auto;
+        height: 100%;
         object-fit: cover;
         object-position: top;
     }
 
     .top-content {
+        position: absolute; /* ← 重要：relative にしない */
+        top: 62%; /* ← スマホ画像に合わせて少し下げる */
+        left: 50%;
+        transform: translate(-50%, -50%);
         flex-direction: row;
-        justify-content: center;
-        gap: 20px;
-        /* position: relative; ← 削除！ */
+        gap: 16px;
         flex-wrap: nowrap;
     }
 
     .btn, .btn-outline {
-        min-width: 120px;
-        flex-shrink: 0;
-        width: auto;
-        margin: 0;
+        min-width: 110px;
+        font-size: 14px;
     }
+}
 
     .grid-container {
         grid-template-columns: repeat(2, 1fr);
@@ -298,6 +297,7 @@ body {
         font-size: 20px;
     }
 }
+
 
 
 
