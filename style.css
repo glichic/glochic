@@ -256,7 +256,7 @@ body {
 
     .top-content {
         position: absolute; /* ← 重要：relative にしない */
-        top: 62%; /* ← スマホ画像に合わせて少し下げる */
+        top: 70%; /* ← スマホ画像に合わせて少し下げる */
         left: 50%;
         transform: translate(-50%, -50%);
         flex-direction: row;
@@ -297,6 +297,7 @@ body {
         font-size: 20px;
     }
 }
+
 
 
 
