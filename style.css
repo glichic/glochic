@@ -86,7 +86,7 @@ body {
     width: 100%;
     height: auto;
     overflow: hidden;
-    margin-top: 70px; /* ← ヘッダー分の余白を確実に確保 */
+    margin-top: 70px; /* ヘッダー分の余白 */
 }
 
 .top-img {
@@ -110,7 +110,7 @@ body {
 @media screen and (max-width: 600px) {
 
     .top {
-        margin-top: 70px; /* スマホでもヘッダー分の余白を確保 */
+        margin-top: 70px;
         height: auto;
     }
 
@@ -131,7 +131,7 @@ body {
         width: 80%;
         margin: 0 auto;
     }
-}
+}}
 
 .btn {
     display: inline-block;
@@ -332,6 +332,7 @@ body {
         margin: 0 auto;
     }
 }
+
 
 
 
