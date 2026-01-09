@@ -8,7 +8,6 @@ body {
     font-family: "Noto Sans JP", sans-serif;
     line-height: 1.7;
 }
-
 * {
     box-sizing: border-box;
 }
@@ -38,7 +37,6 @@ body {
     justify-content: space-between;
     cursor: pointer;
 }
-
 .menu-btn span {
     display: block;
     width: 100%;
@@ -59,20 +57,16 @@ body {
     transition: 0.4s;
     z-index: 999;
 }
-
 .menu.open {
     right: 0;
 }
-
 .menu ul {
     list-style: none;
     padding: 0;
 }
-
 .menu li {
     margin: 20px 0;
 }
-
 .menu a {
     color: #fff;
     text-decoration: none;
@@ -84,79 +78,43 @@ body {
 .top {
     position: relative;
     width: 100%;
-    height: auto;        /* ← これが最重要 */
-    overflow: visible;   /* ← スクロール不能の原因を解消 */
-    margin-top: 70px;    /* ヘッダー分の余白 */
+    height: auto;
+    overflow: visible;
+    margin-top: 70px;
 }
-
 .top-img {
     width: 100%;
-    height: auto;        /* ← これがないと画像が潰れてボタンが消える */
+    height: auto;
     object-fit: cover;
     display: block;
 }
-
-/* PC：画像の下に横並びで配置 */
 .top-content {
     margin-top: 30px;
     text-align: center;
     display: flex;
     justify-content: center;
     gap: 20px;
-    position: relative;  /* ← top指定を無効化するために必要 */
+    position: relative;
     z-index: 5;
 }
-
-/* スマホ調整 */
-@media screen and (max-width: 600px) {
-
-    .top {
-        height: auto;
-        overflow: visible;
-        margin-top: 70px;
-    }
-
-    .top-img {
-        height: auto;
-        object-fit: cover;
-        object-position: top;
-    }
-
-    /* スマホは縦並びで中央配置 */
-    .top-content {
-        flex-direction: column;
-        gap: 12px;
-        margin-top: 25px;
-        position: relative; /* ← top:100px の残骸を完全に無効化 */
-    }
-
-    .btn, .btn-outline {
-        width: 80%;
-        margin: 0 auto;
-    }
-}
-
 .btn {
     display: inline-block;
     padding: 12px 28px;
     background: #fff;
     color: #000;
     text-decoration: none;
-    margin: 0 10px;
     letter-spacing: 2px;
     transition: 0.3s;
+    border: none;
 }
-
 .btn-outline {
     background: transparent;
     border: 1px solid #fff;
     color: #fff;
 }
-
 .btn:hover {
     background: #ccc;
 }
-
 .btn-outline:hover {
     background: #fff;
     color: #000;
@@ -166,13 +124,11 @@ body {
 .about {
     padding: 120px 30px;
 }
-
 .about h2 {
     font-size: 28px;
     margin-bottom: 20px;
     letter-spacing: 3px;
 }
-
 .about p {
     font-size: 18px;
     line-height: 2;
@@ -182,34 +138,27 @@ body {
 .archive {
     padding: 120px 30px 60px;
 }
-
 .archive h2 {
     font-size: 28px;
     margin-bottom: 20px;
     letter-spacing: 3px;
 }
-
-/* 3×4 グリッド */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     padding: 20px 0;
 }
-
 .archive-item {
     position: relative;
     overflow: hidden;
 }
-
 .archive-item img {
     width: 100%;
     height: 320px;
     object-fit: cover;
     border-radius: 4px;
 }
-
-/* ホバー黒幕 */
 .archive-item::after {
     content: attr(data-caption);
     position: absolute;
@@ -227,7 +176,6 @@ body {
     opacity: 0;
     transition: 0.3s;
 }
-
 .archive-item:hover::after {
     opacity: 1;
 }
@@ -246,13 +194,11 @@ body {
     flex-direction: column;
     z-index: 2000;
 }
-
 .lightbox img {
     max-width: 90%;
     max-height: 80%;
     margin-bottom: 20px;
 }
-
 .lightbox p {
     font-size: 18px;
     letter-spacing: 2px;
@@ -262,14 +208,12 @@ body {
 .sns {
     padding: 120px 30px;
 }
-
 .sns-icons img {
     width: 60px;
     margin: 10px;
     opacity: 0.8;
     transition: 0.3s;
 }
-
 .sns-icons img:hover {
     opacity: 1;
 }
@@ -278,7 +222,6 @@ body {
 .contact {
     padding: 120px 30px;
 }
-
 .contact h2 {
     font-size: 28px;
     margin-bottom: 20px;
@@ -290,7 +233,6 @@ body {
     padding: 40px 0;
     background: #111;
 }
-
 .footer p {
     font-size: 14px;
     opacity: 0.7;
@@ -298,46 +240,30 @@ body {
 
 /* スマホ調整 */
 @media screen and (max-width: 600px) {
-
     .top {
+        margin-top: 70px;
         height: auto;
+        overflow: visible;
     }
-
     .top-img {
         height: auto;
         object-fit: cover;
         object-position: top;
     }
-
-    .top-content {
-        top: 100px;
-    }
-
-    /* スマホは2列 */
-    .grid-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .archive-item img {
-        height: 200px;
-    }
-}
-
-@media screen and (max-width: 600px) {
     .top-content {
         flex-direction: column;
         gap: 12px;
-        margin-top: 20px;
+        margin-top: 25px;
+        position: relative;
     }
-
     .btn, .btn-outline {
         width: 80%;
         margin: 0 auto;
     }
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .archive-item img {
+        height: 200px;
+    }
 }
-
-
-
-
-
-
