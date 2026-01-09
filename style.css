@@ -76,31 +76,24 @@ body {
 
 /* TOP */
 .top {
-    position: relative;
     width: 100%;
-    height: 420px; /* ← 画像の高さを固定（PC） */
     margin-top: 70px;
-    overflow: hidden;
 }
-
 .top-img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     display: block;
 }
 
-/* ボタンを画像の中に重ねる */
+/* 画像の下にボタンを置く（通常フロー） */
 .top-content {
-    position: absolute;
-    top: 65%; /* ← 画像内テキストの2改行分下あたり */
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 25px;
     display: flex;
     justify-content: center;
     gap: 20px;
-    z-index: 5;
 }
+
 .btn {
     display: inline-block;
     padding: 12px 28px;
@@ -242,32 +235,8 @@ body {
     opacity: 0.7;
 }
 
+/* スマホ調整 */
 @media screen and (max-width: 600px) {
-
-    .top {
-        height: 360px;
-    }
-
-    .top-img {
-        height: 100%;
-        object-fit: cover;
-        object-position: top;
-    }
-
-    .top-content {
-        position: absolute;
-        top: 70%; /* ← ここを変えれば下がる */
-        left: 50%;
-        transform: translate(-50%, -50%);
-        flex-direction: row;
-        gap: 16px;
-        flex-wrap: nowrap;
-    }
-
-    .btn, .btn-outline {
-        min-width: 110px;
-        font-size: 14px;
-    }
 
     .grid-container {
         grid-template-columns: repeat(2, 1fr);
@@ -276,31 +245,20 @@ body {
     .archive-item img {
         height: 200px;
     }
-}  /* ← ここで正しく終わり */
+}
 
 /* PC版フォント拡大 */
 @media screen and (min-width: 601px) {
     body {
         font-size: 18px;
     }
-
     h2 {
         font-size: 32px;
     }
-
     .btn, .btn-outline {
         font-size: 18px;
     }
-
     p {
         font-size: 20px;
     }
 }
-
-
-
-
-
-
-
-
