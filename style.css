@@ -78,14 +78,16 @@ body {
 .top {
     width: 100%;
     margin-top: 70px;
+    padding-bottom: 0;
 }
+
 .top-img {
     width: 100%;
     height: auto;
     object-fit: cover;
     display: block;
+    margin-bottom: 0;
 }
-
 /* 画像の下にボタンを置く（PC・スマホ共通） */
 .top-content {
     margin-top: 10px;   /* ← ここで上下の距離を調整（20pxが最適） */
@@ -267,4 +269,5 @@ body {
         font-size: 20px;
     }
 }
+
 
