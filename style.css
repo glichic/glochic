@@ -78,13 +78,14 @@ body {
 .top {
     position: relative;
     width: 100%;
-    height: auto;
+    height: 420px; /* ← 画像の高さを固定（PC） */
     margin-top: 70px;
+    overflow: hidden;
 }
 
 .top-img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
@@ -92,7 +93,7 @@ body {
 /* ボタンを画像の中に重ねる */
 .top-content {
     position: absolute;
-    top: 45%; /* ← 画像内の「2改行分」くらいの高さに調整 */
+    top: 58%; /* ← 画像内テキストの2改行分下あたり */
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -297,6 +298,7 @@ body {
         font-size: 20px;
     }
 }
+
 
 
 
