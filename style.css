@@ -80,7 +80,6 @@ body {
     margin-top: 70px;
     padding-bottom: 0;
 }
-
 .top-img {
     width: 100%;
     height: auto;
@@ -88,9 +87,10 @@ body {
     display: block;
     margin-bottom: 0;
 }
+
 /* 画像の下にボタンを置く（PC・スマホ共通） */
 .top-content {
-    margin-top: 10px;   /* ← ここで上下の距離を調整（20pxが最適） */
+    margin-top: 10px;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -130,7 +130,7 @@ body {
 }
 .about p {
     font-size: 18px;
-    line-height: 2;
+    line-height: 1.8; /* ← 読みやすく調整 */
 }
 
 /* ARCHIVE */
@@ -154,9 +154,10 @@ body {
 }
 .archive-item img {
     width: 100%;
-    height: 320px;
+    height: 280px; /* ← PCで少し低くして洗練 */
     object-fit: cover;
     border-radius: 4px;
+    margin-bottom: 10px; /* ← スマホでもPCでも余白を確保 */
 }
 .archive-item::after {
     content: attr(data-caption);
@@ -208,7 +209,7 @@ body {
     padding: 120px 30px;
 }
 .sns-icons img {
-    width: 60px;
+    width: 48px; /* ← 60px → 48px に縮小 */
     margin: 10px;
     opacity: 0.8;
     transition: 0.3s;
@@ -241,7 +242,7 @@ body {
 @media screen and (max-width: 600px) {
 
     .top-content {
-        margin-top: 10px;  /* ← スマホも同じ距離に統一 */
+        margin-top: 10px;
         gap: 16px;
     }
 
@@ -251,6 +252,7 @@ body {
 
     .archive-item img {
         height: 200px;
+        margin-bottom: 10px;
     }
 }
 
@@ -269,5 +271,3 @@ body {
         font-size: 20px;
     }
 }
-
-
