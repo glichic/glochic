@@ -86,9 +86,9 @@ body {
     display: block;
 }
 
-/* 画像の下にボタンを置く（通常フロー） */
+/* 画像の下にボタンを置く */
 .top-content {
-    margin-top: 50px;
+    margin-top: 40px;   /* ← PCでボタンを下げる場所はここだけ */
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -238,6 +238,11 @@ body {
 /* スマホ調整 */
 @media screen and (max-width: 600px) {
 
+    .top-content {
+        margin-top: 30px;  /* ← スマホはここで調整 */
+        gap: 16px;
+    }
+
     .grid-container {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -262,4 +267,3 @@ body {
         font-size: 20px;
     }
 }
-
