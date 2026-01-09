@@ -290,5 +290,17 @@ body {
     }
 }
 
+@media screen and (max-width: 600px) {
+    .top-content {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .btn, .btn-outline {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
 
 
