@@ -206,14 +206,16 @@ body {
 
 /* SNS */
 .sns {
-    padding: 120px 30px;
+    padding: 180px 30px 120px;  /* ← 上の余白を増やしてヘッダーの被りを完全回避 */
 }
+
 .sns-icons img {
-    width: 48px; /* ← 60px → 48px に縮小 */
+    width: 48px;
     margin: 10px;
     opacity: 0.8;
     transition: 0.3s;
 }
+
 .sns-icons img:hover {
     opacity: 1;
 }
@@ -271,3 +273,4 @@ body {
         font-size: 20px;
     }
 }
+
